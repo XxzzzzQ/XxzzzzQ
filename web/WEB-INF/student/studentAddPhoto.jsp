@@ -18,7 +18,7 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">学生端</a>
+                <a href="index.jsp">主页</a>
                 <a><cite>修改头像</cite></a>
             </span>
             <p style="text-align: center;">

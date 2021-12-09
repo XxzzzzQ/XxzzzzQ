@@ -23,13 +23,13 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a>管理员</a>
+                <a href="index.jsp">主页</a>
                 <a>系统管理</a>
                 <a><cite>公告发布</cite></a>
             </span>
@@ -48,7 +48,7 @@
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>公告ID</th>
+                    <th>序号</th>
                     <th>公告日期</th>
                     <th>公告内容</th>
                     <th>操作</th>
@@ -56,13 +56,13 @@
                 </thead>
 
                 <c:forEach items="${notifys}" var="notify">
-                <tr>
-                    <td>${notify.id}</td>
-                    <td>${notify.notifyDate}</td>
-                    <td>${notify.notifyInfo}</td>
-                    <td><button class="layui-btn layui-btn-normal">修改</button><button class="layui-btn layui-btn-danger">删除</button></td>
-                </tr>
-            </c:forEach>
+                    <tr>
+                        <td>${notify.id}</td>
+                        <td>${notify.notifyDate}</td>
+                        <td>${notify.notifyInfo}</td>
+                        <td><button class="layui-btn layui-btn-primary layui-border-green">修改</button><button class="layui-btn layui-btn-primary layui-border-green">删除</button></td>
+                    </tr>
+                </c:forEach>
             </table>
 
             <jsp:include page="/footer.jsp"></jsp:include>

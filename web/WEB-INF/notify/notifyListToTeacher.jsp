@@ -11,13 +11,13 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a>教师端</a>
+                <a href="index.jsp">主页</a>
                 <a><cite>公告列表</cite></a>
             </span>
             <p> &nbsp;</p>
@@ -25,7 +25,7 @@
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>公告ID</th>
+                    <th>序号</th>
                     <th>公告日期</th>
                     <th>公告内容</th>
                 </tr>

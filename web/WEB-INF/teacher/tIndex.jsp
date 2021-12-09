@@ -36,71 +36,59 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <%--<jsp:include page="/filterLogin.jsp"></jsp:include>--%>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <div class="layui-card">
-                <div class="layui-card-header" id="index-function">功能</div>
+                <div class="layui-card-header">公告通知</div>
+                <c:forEach items="${notifys}" var="notify">
+                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
+                </c:forEach>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header" id="index-function">${teacher.t_name}老师，欢迎您！</div>
                 <div class="layui-card-body">
                     <ul class="layui-row layui-col-space10 layui-this">
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/query">
+                            <a lay-href="/mavenTemplate/user/email" href="${pageContext.request.contextPath}/addSelectCourseServlet">
+                                <i class="layui-icon layui-icon-survey"></i>
+                                <cite>添加授课</cite>
+                            </a>
+                        </li>
+                        <li class="layui-col-xs3">
+                            <a lay-href="/mavenTemplate/user/info" href="${pageContext.request.contextPath}/teacherOptionalCourseServlet">
+                                <i class="layui-icon layui-icon-survey"></i>
+                                <cite>我的授课</cite>
+                            </a>
+                        </li>
+                        <li class="layui-col-xs3">
+                            <a lay-href="/mavenTemplate/student/query" href="${pageContext.request.contextPath}/findStudentByPageServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>学生信息查询</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/teacher/query">
+                            <a lay-href="/mavenTemplate/teacher/query" href="${pageContext.request.contextPath}/teacherListServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>教师信息查询</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/class/query">
-                                <i class="layui-icon layui-icon-survey"></i>
-                                <cite>班级信息查询</cite>
-                            </a>
-                        </li>
-                        <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/major/query">
+                            <a lay-href="/mavenTemplate/major/query" href="${pageContext.request.contextPath}/cdcListServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>专业&amp;学院信息查询</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/info">
-                                <i class="layui-icon layui-icon-user"></i>
-                                <cite>个人资料</cite>
-                            </a>
-                        </li>
-                        <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/password">
+                            <a lay-href="/mavenTemplate/user/password" href="${pageContext.request.contextPath}/teacherPasswordIndexServlet">
                                 <i class="layui-icon layui-icon-set"></i>
                                 <cite>修改密码</cite>
                             </a>
                         </li>
-                        <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/email">
-                                <i class="layui-icon layui-icon-set"></i>
-                                <cite>修改邮箱</cite>
-                            </a>
-                        </li>
-                        <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/modify">
-                                <i class="layui-icon layui-icon-survey"></i>
-                                <cite>学生信息修改</cite>
-                            </a>
-                        </li>
                     </ul>
                 </div>
-            </div>
-            <div class="layui-card">
-                <div class="layui-card-header">学校最新公告</div>
-                <c:forEach items="${notifys}" var="notify">
-                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
-                </c:forEach>
             </div>
         </div>
     </div>

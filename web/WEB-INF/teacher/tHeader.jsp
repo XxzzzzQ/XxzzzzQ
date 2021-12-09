@@ -10,16 +10,14 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-header">
-        <div class="layui-logo" style="font-size: 52px">SIMS</div>
+    <div class="layui-header layui-bg-green">
+        <div class="layui-logo" style="color: white">学生信息管理系统</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a class = "layui-icon layui-icon-home" id="fresh" href="index.jsp"> 主页</a></li>
-            <li class="layui-nav-item "><a class = "layui-icon layui-icon-refresh-3" href="javascript:location.reload();"> 刷新</a></li>
             <li class="layui-nav-item">
                 <a class="layui-icon layui-icon-link" href="javascript:;"> 其它</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="#">小吐槽</a></dd>
                     <dd><a href="${pageContext.request.contextPath}/notifyListToServlet">学校公告</a></dd>
                 </dl>
             </li>
@@ -27,10 +25,10 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    ${teacher.t_id} ${teacher.t_name}
+                    ${teacher.t_name}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="#">个人信息</a></dd>
+                    <dd><a href="${pageContext.request.contextPath}/teacherInfomationServlet">个人信息</a></dd>
                     <dd><a href="${pageContext.request.contextPath}/logoutServlet">退出</a></dd>
                 </dl>
             </li>

@@ -7,10 +7,10 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-side layui-bg-black">
+    <div class="layui-side layui-bg-green">
         <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test" id="nav">
+            <!-- 左侧导航区域 -->
+            <ul class="layui-nav layui-nav-tree layui-bg-green"  lay-filter="test" id="nav">
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">选课信息</a>
                     <dl class="layui-nav-child">

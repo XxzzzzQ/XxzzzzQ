@@ -7,17 +7,10 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <div class="layui-side layui-bg-black">
+    <div class="layui-side layui-bg-green">
         <div class="layui-side-scroll">
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test" id="nav">
-                <li class="layui-nav-item">
-                    <a class="" href="javascript:;">选课信息管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="${pageContext.request.contextPath}/studentSelectCourseListServlet">选课列表</a></dd>
-                        <dd><a href="${pageContext.request.contextPath}/studentOptionalCourseServlet">可选课程</a></dd>
-                    </dl>
-                </li>
+            <!-- 左侧导航栏 -->
+            <ul class="layui-nav layui-nav-tree layui-bg-green"  lay-filter="test" id="nav">
                 <li class="layui-nav-item">
                     <a class="" href="javascript:;">学生管理</a>
                     <dl class="layui-nav-child">
@@ -32,6 +25,13 @@
                         <dd><a href="${pageContext.request.contextPath}/teacherListServlet">查询教师</a></dd>
                         <dd hidden id="hidden-update2"><a href="#">修改教师信息</a></dd>
                         <dd><a href="${pageContext.request.contextPath}/addTeacherServlet">增加教师</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item" >
+                    <a class="" href="javascript:;" >选课信息管理</a>
+                    <dl class="layui-nav-child" >
+                        <dd><a href="${pageContext.request.contextPath}/studentSelectCourseListServlet">课程列表</a></dd>
+                        <dd><a href="${pageContext.request.contextPath}/studentOptionalCourseServlet">可选课程</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">

@@ -17,7 +17,7 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">学生端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">个人信息管理</a>
                     <a><cite>文件列表</cite></a>
                 </span>

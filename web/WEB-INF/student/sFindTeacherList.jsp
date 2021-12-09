@@ -17,14 +17,14 @@
             <!-- 内容主体区域 -->
             <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">学生端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">教师通讯录</a>
                     <a><cite>本院教师信息</cite></a>
                 </span>
                 <table class="layui-table" lay-filter="test">
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>序号</th>
                         <th>工号</th>
                         <th>姓名</th>
                         <th>性别</th>

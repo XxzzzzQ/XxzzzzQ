@@ -11,13 +11,13 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">管理员</a>
+                <a href="index.jsp">主页</a>
                 <a href="">学生管理</a>
                 <a><cite>查询学生</cite></a>
             </span>
@@ -35,8 +35,7 @@
                         </div>
 
                         <div class="layui-input-inline">
-                            <button type="submit" class="layui-btn">查询</button>
-                            <a class="layui-btn layui-btn-danger" href="javascript:void(0);" id="deleteSelectStudent">删除选中</a>
+                            <button type="submit" class="layui-btn layui-btn-primary layui-border-green">查询</button>
                         </div>
                     </div>
                 </div>
@@ -46,8 +45,11 @@
                 <table class="layui-table" lay-filter="test">
                     <thead>
                     <tr>
-                        <th><input id="firstCb" type="checkbox" class="my-checkbox" name="" title="" lay-skin="primary"></th>
-                        <th>ID</th>
+                        <th>
+                            <input id="firstCb" type="checkbox" class="my-checkbox" name="" title="" lay-skin="primary">
+                            <a class="layui-btn layui-btn-primary layui-border-green layui-btn-sm" href="javascript:void(0);" id="deleteSelectStudent">删除</a>
+                        </th>
+                        <th>序号</th>
                         <th>学号</th>
                         <th>学院</th>
                         <th>系别</th>
@@ -76,22 +78,25 @@
                             <td>${student.s_address}</td>
                             <td>${student.s_phone}</td>
                             <td>${student.s_email}</td>
-                            <td><a class="layui-btn layui-btn-normal" href="${pageContext.request.contextPath}/updateStudentServlet?sid=${student.s_id}">修改</a><a class="layui-btn layui-btn-danger" href="javascript:deleteStudent(${student.s_id});">删除</a></td>
+                            <td>
+                                <a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/updateStudentServlet?sid=${student.s_id}">修改</a>
+                                <a class="layui-btn layui-btn-primary layui-border-green" href="javascript:deleteStudent(${student.s_id});">删除</a>
+                            </td>
                         </tr>
                     </c:forEach>
                 </table>
             </form>
-<%--            <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1"><a href="javascript:;" class="layui-laypage-prev" data-page="3">上一页</a><a href="javascript:;" data-page="1">1</a><a href="javascript:;" data-page="2">2</a><a href="javascript:;" data-page="3">3</a><span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>4</em></span><a href="javascript:;" data-page="5">5</a><a href="javascript:;" class="layui-laypage-next" data-page="5">下一页</a></div>--%>
+            <%--            <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1"><a href="javascript:;" class="layui-laypage-prev" data-page="3">上一页</a><a href="javascript:;" data-page="1">1</a><a href="javascript:;" data-page="2">2</a><a href="javascript:;" data-page="3">3</a><span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>4</em></span><a href="javascript:;" data-page="5">5</a><a href="javascript:;" class="layui-laypage-next" data-page="5">下一页</a></div>--%>
             <ul>
 
                 <c:if test="${pb.currentPage == 1}">
-                    <a href ="javascript:return false;">
-                </c:if>
-                <c:if test="${pb.currentPage != 1}">
+                <a href ="javascript:return false;">
+                    </c:if>
+                    <c:if test="${pb.currentPage != 1}">
                     <a href="${pageContext.request.contextPath}/findStudentByPageServlet?currentPage=${pb.currentPage-1}&rows=5&s_id=${condition.s_id[0]}&s_name=${condition.s_name[0]}">
-                </c:if>
+                        </c:if>
 
-                <li class="page-li">上一页</li></a>
+                        <li class="page-li">上一页</li></a>
                 </a>
                 <c:forEach begin="1" end="${pb.totalPage}" var="i">
                     <c:if test="${pb.currentPage == i}">
@@ -103,12 +108,12 @@
                 </c:forEach>
 
                 <c:if test="${pb.currentPage == pb.totalPage}">
-                    <a href="javascript:return false;">
-                </c:if>
-                <c:if test="${pb.currentPage != pb.totalPage}">
+                <a href="javascript:return false;">
+                    </c:if>
+                    <c:if test="${pb.currentPage != pb.totalPage}">
                     <a href="${pageContext.request.contextPath}/findStudentByPageServlet?currentPage=${pb.currentPage+1}&rows=5&s_id=${condition.s_id[0]}&s_name=${condition.s_name[0]}">
-                </c:if>
-                <li class="page-li">下一页</li></a>
+                        </c:if>
+                        <li class="page-li">下一页</li></a>
             </ul>
 
             <fieldset class="layui-elem-field layui-field-title" style="margin-top: 0px;">

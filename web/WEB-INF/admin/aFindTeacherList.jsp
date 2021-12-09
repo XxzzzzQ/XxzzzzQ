@@ -11,45 +11,48 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
-    <div class="layui-layout layui-layout-admin">
-        <div class="layui-body">
-            <!-- 内容主体区域 -->
-            <div style="padding: 15px;">
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">管理员</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">教师管理</a>
                     <a><cite>查询教师</cite></a>
                 </span>
-                <table class="layui-table" lay-filter="test">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>工号</th>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>文化程度</th>
-                        <th>职称</th>
-                        <th>操作</th>
-                    </tr>
-                    </thead>
+            <table class="layui-table" lay-filter="test">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>工号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>文化程度</th>
+                    <th>职称</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
 
-                    <c:forEach items="${teachers}" var="teacher" varStatus="t">
-                        <tr>
-                            <td>${t.count}</td>
-                            <td>${teacher.t_id}</td>
-                            <td>${teacher.t_name}</td>
-                            <td>${teacher.t_sex}</td>
-                            <td>${teacher.t_education}</td>
-                            <td>${teacher.t_title}</td>
-                            <td><a class="layui-btn layui-btn-normal" href="${pageContext.request.contextPath}/updateTeacherServlet?tid=${teacher.t_id}">修改</a><a class="layui-btn layui-btn-danger" href="javascript:deleteTeacher(${teacher.t_id});">删除</a></td>
-                        </tr>
-                    </c:forEach>
-                </table>
-                <jsp:include page="/footer.jsp"></jsp:include>
-            </div>
+                <c:forEach items="${teachers}" var="teacher" varStatus="t">
+                    <tr>
+                        <td>${t.count}</td>
+                        <td>${teacher.t_id}</td>
+                        <td>${teacher.t_name}</td>
+                        <td>${teacher.t_sex}</td>
+                        <td>${teacher.t_education}</td>
+                        <td>${teacher.t_title}</td>
+                        <td>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/updateTeacherServlet?tid=${teacher.t_id}">修改</a>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="javascript:deleteTeacher(${teacher.t_id});">删除</a>
+                        </td>
+                    </tr>
+                </c:forEach>
+            </table>
+            <jsp:include page="/footer.jsp"></jsp:include>
         </div>
     </div>
+</div>
 
 
 <script type="text/javascript">

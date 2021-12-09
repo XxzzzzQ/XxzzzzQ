@@ -2,6 +2,6 @@
 
 <div class="layui-footer">
     <!-- 底部固定区域 -->
-    © yoyling.com - 学生信息管理系统
+    学生信息管理系统
 </div>
 

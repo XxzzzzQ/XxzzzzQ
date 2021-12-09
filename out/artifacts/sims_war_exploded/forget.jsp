@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>忘记密码</title>
+    <title>管理系统-找回密码</title>
     <link rel="stylesheet" href="./css/layui.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
@@ -18,19 +18,22 @@
         <form class="layui-form">
             <div class="layui-input-inline">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-username"></label>
-                <input type="text" name="account" required lay-verify="required" placeholder="请输入注册时的ID" autocomplete="off"
+                <input type="text" name="account" required lay-verify="required" placeholder="请输入用户名" autocomplete="off"
                        class="layui-input">
             </div>
             <div class="layui-input-inline">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-email"></label>
-                <input type="password" name="password" required lay-verify="required" placeholder="用于找回的邮箱" autocomplete="off"
+                <input type="password" name="password" required lay-verify="required" placeholder="请输入用于找回密码的邮箱" autocomplete="off"
                        class="layui-input">
             </div>
             <div class="layui-input-inline login-btn">
-                <button lay-submit lay-filter="login" class="layui-btn">找回</button>
+                <button lay-submit lay-filter="login" class="layui-btn layui-btn-primary">找回</button>
             </div>
             <hr/>
-            <p><a href="login.jsp" class="fl">登录&emsp;&emsp;&emsp;&emsp;</a><a href="https://yoyling.com" class="fl">如果你未绑定邮箱请联系我</a><a href="register.jsp" class="fr">注册</a></p>
+            <p>
+                <a href="login.jsp" class="fl">已有账号？在此登录&emsp;&emsp;&emsp;&emsp;</a>
+                <a href="register.jsp" class="fr">未有账号？在此注册</a>
+            </p>
         </form>
     </div>
 </div>

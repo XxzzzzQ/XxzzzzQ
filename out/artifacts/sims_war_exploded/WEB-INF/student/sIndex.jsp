@@ -42,7 +42,13 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <div class="layui-card">
-                <div class="layui-card-header" id="index-function">功能</div>
+                <div class="layui-card-header">公告通知</div>
+                <c:forEach items="${notifys}" var="notify">
+                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
+                </c:forEach>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header" id="index-function">欢迎您！</div>
                 <div class="layui-card-body">
                     <ul class="layui-row layui-col-space10 layui-this">
                         <li class="layui-col-xs3">
@@ -65,19 +71,19 @@
                         </li>
                         <li class="layui-col-xs3">
                             <a href="${pageContext.request.contextPath}/teacherListServlet">
-                                <i class="layui-icon layui-icon-user"></i>
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>本院教师信息</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
                             <a href="${pageContext.request.contextPath}/cdcListServlet">
-                                <i class="layui-icon layui-icon-set"></i>
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>学院专业查询</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
                             <a href="${pageContext.request.contextPath}/studentInfomationServlet">
-                                <i class="layui-icon layui-icon-set"></i>
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>个人信息</cite>
                             </a>
                         </li>
@@ -87,20 +93,8 @@
                                 <cite>修改密码</cite>
                             </a>
                         </li>
-                        <li class="layui-col-xs3">
-                            <a href="${pageContext.request.contextPath}/fileListServlet">
-                                <i class="layui-icon layui-icon-survey"></i>
-                                <cite>文件列表</cite>
-                            </a>
-                        </li>
                     </ul>
                 </div>
-            </div>
-            <div class="layui-card">
-                <div class="layui-card-header">学校最新公告</div>
-                <c:forEach items="${notifys}" var="notify">
-                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
-                </c:forEach>
             </div>
 
         </div>

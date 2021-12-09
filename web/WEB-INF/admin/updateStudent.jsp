@@ -11,14 +11,15 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">管理员</a>
-                <a href="">学生管理</a>
+                <a href="index.jsp">主页</a>
+                <a>学生管理</a>
+                <a href="${pageContext.request.contextPath}/findStudentByPageServlet">查询学生</a>
                 <a><cite>修改学生信息</cite></a>
             </span>
             <form class="layui-form" action="${pageContext.request.contextPath}/updateStudentInfoServlet" style="padding-top: 50px" method="post">
@@ -108,8 +109,8 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
-                        <button class="layui-btn layui-btn-primary" id="inforeset">重置</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" lay-submit lay-filter="formDemo">修改</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" id="inforeset">重置</button>
                         <span style="padding-left: 20px;">${update_msg}</span>
                     </div>
                 </div>

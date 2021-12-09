@@ -11,20 +11,21 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">教师端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">课程信息</a>
+                    <a href="${pageContext.request.contextPath}/teacherOptionalCourseServlet">我的授课</a>
                     <a><cite>学生成绩</cite></a>
                 </span>
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>序号</th>
                     <th>学号</th>
                     <th>学生姓名</th>
                     <th>课程号</th>
@@ -44,7 +45,10 @@
                         <td>${sc.c_name}</td>
                         <td>${sc.c_info}</td>
                         <td>${sc.score}</td>
-                        <td><a class="layui-btn layui-btn-normal" href="${pageContext.request.contextPath}/updateScoreServlet?cid=${sc.c_id}&sid=${sc.s_id}">修改分数</a><a class="layui-btn layui-btn-danger" href="javascript:deleteStudentSelectCourse();">删除</a></td>
+                        <td>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/updateScoreServlet?cid=${sc.c_id}&sid=${sc.s_id}">修改分数</a>
+                            <a class="layui-btn layui-btn-primary layui-border-red" href="javascript:deleteStudentSelectCourse();">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

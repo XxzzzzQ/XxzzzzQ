@@ -17,7 +17,7 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">学生端</a>
+                <a href="index.jsp">主页</a>
                 <a href="">个人信息管理</a>
                 <a><cite>个人信息</cite></a>
             </span>
@@ -97,8 +97,8 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
-                        <button class="layui-btn layui-btn-primary" id="inforeset">重置</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" lay-submit lay-filter="formDemo">修改</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" id="inforeset">重置</button>
                         <span style="padding-left: 20px;">${update_msg}</span>
                     </div>
                 </div>

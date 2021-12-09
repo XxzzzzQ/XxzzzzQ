@@ -4,7 +4,7 @@
 <head>
     <title>${html_title}</title>
     <script>
-        //JavaScript代码区域
+        //导入layui的element模块，用于实现导航栏
         layui.use('element', function(){
             var element = layui.element;
             element.init();
@@ -20,7 +20,7 @@
             border-radius: 2px;
             font-size: 30px;
             background-color: #F8F8F8;
-            color: #333;
+            color: #333333;
             transition: all .3s;
             -webkit-transition: all .3s;
         }
@@ -36,53 +36,53 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <div class="layui-card">
-                <div class="layui-card-header" id="index-function">功能</div>
+                <div class="layui-card-header">公告通知</div>
+                <c:forEach items="${notifys}" var="notify">
+                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
+                </c:forEach>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header" id="index-function">欢迎您！</div>
                 <div class="layui-card-body">
                     <ul class="layui-row layui-col-space10 layui-this">
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/query">
-                                <i class="layui-icon layui-icon-survey"></i>
-                                <cite>选课列表</cite>
-                            </a>
-                        </li>
-                        <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/class/query">
+                            <a lay-href="/mavenTemplate/class/query" href="${pageContext.request.contextPath}/studentOptionalCourseServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>可选课程</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/major/query">
+                            <a lay-href="/mavenTemplate/major/query" href="${pageContext.request.contextPath}/studentSelectCourseListServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>查询学生</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/info">
-                                <i class="layui-icon layui-icon-user"></i>
+                            <a lay-href="/mavenTemplate/user/info" href="${pageContext.request.contextPath}/addStudentServlet">
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>增加学生</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/password">
-                                <i class="layui-icon layui-icon-set"></i>
+                            <a lay-href="/mavenTemplate/user/password" href="${pageContext.request.contextPath}/teacherListServlet">
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>查询教师</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/user/email">
-                                <i class="layui-icon layui-icon-set"></i>
+                            <a lay-href="/mavenTemplate/user/email" href="${pageContext.request.contextPath}/addTeacherServlet">
+                                <i class="layui-icon layui-icon-survey"></i>
                                 <cite>增加教师</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/modify">
+                            <a lay-href="/mavenTemplate/student/modify" href="${pageContext.request.contextPath}/cdcListServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>学院专业查询</cite>
                             </a>
@@ -94,25 +94,19 @@
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/modify">
+                            <a lay-href="/mavenTemplate/student/modify" href="${pageContext.request.contextPath}/notifyServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>公告发布</cite>
                             </a>
                         </li>
                         <li class="layui-col-xs3">
-                            <a lay-href="/mavenTemplate/student/modify">
+                            <a lay-href="/mavenTemplate/student/modify" href="${pageContext.request.contextPath}/notifyListServlet">
                                 <i class="layui-icon layui-icon-survey"></i>
                                 <cite>公告列表</cite>
                             </a>
                         </li>
                     </ul>
                 </div>
-            </div>
-            <div class="layui-card">
-                <div class="layui-card-header">学校最新公告</div>
-                <c:forEach items="${notifys}" var="notify">
-                    <div class="layui-card-body" id="notify">${notify.notifyInfo}<p>${notify.notifyDate}</div>
-                </c:forEach>
             </div>
         </div>
     </div>

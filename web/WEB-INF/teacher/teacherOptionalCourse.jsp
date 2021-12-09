@@ -11,20 +11,20 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">教师端</a>
-                    <a href="">课程信息</a>
+                    <a href="index.jsp">主页</a>
+                    <a>课程信息</a>
                     <a><cite>我的授课</cite></a>
                 </span>
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>序号</th>
                     <th>课程号</th>
                     <th>课程名</th>
                     <th>课程简介</th>
@@ -38,7 +38,11 @@
                         <td>${optionalcourse.c_id}</td>
                         <td>${optionalcourse.c_name}</td>
                         <td>${optionalcourse.c_info}</td>
-                        <td><a class="layui-btn layui-btn-normal" href="${pageContext.request.contextPath}/updateTeacherOptionalCourseServlet?cid=${optionalcourse.c_id}">修改</a><a class="layui-btn" href="${pageContext.request.contextPath}/findStudentCourseScoreServlet?cid=${optionalcourse.c_id}">查看</a><a class="layui-btn layui-btn-danger" href="javascript:deleteOptionalCourse(${optionalcourse.c_id});">删除</a></td>
+                        <td>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/updateTeacherOptionalCourseServlet?cid=${optionalcourse.c_id}">修改</a>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/findStudentCourseScoreServlet?cid=${optionalcourse.c_id}">查看</a>
+                            <a class="layui-btn layui-btn-primary layui-border-green" href="javascript:deleteOptionalCourse(${optionalcourse.c_id});">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>

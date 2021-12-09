@@ -11,43 +11,43 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
-    <div class="layui-layout layui-layout-admin">
-        <div class="layui-body">
-            <!-- 内容主体区域 -->
-            <div style="padding: 15px;">
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">教师端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">教师通讯录</a>
                     <a><cite>本院教师信息</cite></a>
                 </span>
-                <table class="layui-table" lay-filter="test">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>工号</th>
-                        <th>姓名</th>
-                        <th>性别</th>
-                        <th>文化程度</th>
-                        <th>职称</th>
-                    </tr>
-                    </thead>
+            <table class="layui-table" lay-filter="test">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>工号</th>
+                    <th>姓名</th>
+                    <th>性别</th>
+                    <th>文化程度</th>
+                    <th>职称</th>
+                </tr>
+                </thead>
 
-                    <c:forEach items="${teachers}" var="teacher" varStatus="t">
-                        <tr  style="height: 70px;">
-                            <td>${t.count}</td>
-                            <td>${teacher.t_id}</td>
-                            <td>${teacher.t_name}</td>
-                            <td>${teacher.t_sex}</td>
-                            <td>${teacher.t_education}</td>
-                            <td>${teacher.t_title}</td>
-                        </tr>
-                    </c:forEach>
-                </table>
-                <jsp:include page="/footer.jsp"></jsp:include>
-            </div>
+                <c:forEach items="${teachers}" var="teacher" varStatus="t">
+                    <tr  style="height: 70px;">
+                        <td>${t.count}</td>
+                        <td>${teacher.t_id}</td>
+                        <td>${teacher.t_name}</td>
+                        <td>${teacher.t_sex}</td>
+                        <td>${teacher.t_education}</td>
+                        <td>${teacher.t_title}</td>
+                    </tr>
+                </c:forEach>
+            </table>
+            <jsp:include page="/footer.jsp"></jsp:include>
         </div>
     </div>
+</div>
 
 
 <script type="text/javascript">

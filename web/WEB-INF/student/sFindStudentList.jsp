@@ -17,7 +17,7 @@
             <!-- 内容主体区域 -->
             <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">学生端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">学生通讯录</a>
                     <a><cite>本院学生信息</cite></a>
                 </span>
@@ -35,7 +35,7 @@
 
                             <div class="layui-input-inline">
 
-                                <button type="submit" class="layui-btn">查询</button>
+                                <button type="submit" class="layui-btn layui-btn-primary layui-border-green">查询</button>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                 <table class="layui-table" lay-filter="test">
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>序号</th>
                         <th>学号</th>
                         <th>学院</th>
                         <th>系别</th>

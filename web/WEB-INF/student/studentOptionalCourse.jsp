@@ -17,7 +17,7 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">学生端</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">选课信息</a>
                     <a><cite>可选课程</cite></a>
                 </span>
@@ -25,7 +25,7 @@
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>序号</th>
                     <th>课程号</th>
                     <th>课程名</th>
                     <th>课程简介</th>
@@ -43,7 +43,7 @@
                         <td>${optionalcourse.c_info}</td>
                         <td>${optionalcourse.t_id}</td>
                         <td>${optionalcourse.t_name}</td>
-                        <td><a class="layui-btn layui-btn-normal" href="${pageContext.request.contextPath}/doSelectCourseServlet?id=${optionalcourse.c_id}">选课</a></td>
+                        <td><a class="layui-btn layui-btn-primary layui-border-green" href="${pageContext.request.contextPath}/doSelectCourseServlet?id=${optionalcourse.c_id}">选课</a></td>
                     </tr>
                 </c:forEach>
             </table>

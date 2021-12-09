@@ -11,20 +11,20 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
                 <span class="layui-breadcrumb">
-                    <a href="">管理员</a>
+                    <a href="index.jsp">主页</a>
                     <a href="">学院专业管理</a>
                     <a><cite>学院专业查询</cite></a>
                 </span>
             <table class="layui-table" lay-filter="test">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>序号</th>
                     <th>学院</th>
                     <th>专业</th>
                     <th>班级</th>
@@ -38,7 +38,7 @@
                         <td>${cdc.college}</td>
                         <td>${cdc.department}</td>
                         <td>${cdc.cclass}</td>
-                        <td><a class="layui-btn layui-btn-danger" href="javascript:deleteCDC();">删除</a></td>
+                        <td><a class="layui-btn layui-btn-primary layui-border-green" href="javascript:deleteCDC();">删除</a></td>
                     </tr>
                 </c:forEach>
             </table>

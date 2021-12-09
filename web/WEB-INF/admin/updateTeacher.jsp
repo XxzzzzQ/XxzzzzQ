@@ -11,14 +11,15 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/admin/aHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/admin/adminNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/admin/adleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">管理员</a>
+                <a href="index.jsp">主页</a>
                 <a href="">教师管理</a>
+                <a href="${pageContext.request.contextPath}/teacherListServlet">查询教师</a>
                 <a><cite>修改教师信息</cite></a>
             </span>
             <form class="layui-form" action="${pageContext.request.contextPath}/updateTeacherInfoServlet" style="padding-top: 50px" method="post">
@@ -33,7 +34,7 @@
                     <div class="layui-input-block">
                         <select name="selectCollege">
 
-<%--                            <option value="${teacher.t_college}" selected>${teacher.t_college}</option>--%>
+                            <%--                            <option value="${teacher.t_college}" selected>${teacher.t_college}</option>--%>
                             <option value="" selected></option>
 
                             <c:forEach items="${collegeLists}" var="collegeList">
@@ -46,8 +47,8 @@
                     <label class="layui-form-label">系别</label>
                     <div class="layui-input-block">
                         <select name="selectDepartment" lay-search>
-<%--                            <option value="${teacher.t_department}" selected>${teacher.t_department}</option>--%>
-                                <option value="" selected></option>
+                            <%--                            <option value="${teacher.t_department}" selected>${teacher.t_department}</option>--%>
+                            <option value="" selected></option>
                             <c:forEach items="${departmentLists}" var="departmentList">
                                 <option>${departmentList.department}</option>
                             </c:forEach>
@@ -58,7 +59,7 @@
                     <label class="layui-form-label">班级</label>
                     <div class="layui-input-block">
                         <select name="selectClass" lay-search>
-<%--                            <option value="${teacher.t_class}" selected>${teacher.t_class}</option>--%>
+                            <%--                            <option value="${teacher.t_class}" selected>${teacher.t_class}</option>--%>
                             <option value="" selected></option>
                             <c:forEach items="${classLists}" var="classList">
                                 <option>${classList.cclass}</option>
@@ -99,8 +100,8 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
-                        <button class="layui-btn layui-btn-primary" id="inforeset">重置</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" lay-submit lay-filter="formDemo">修改</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" id="inforeset">重置</button>
                         <span style="padding-left: 20px;">${update_msg}</span>
                     </div>
                 </div>

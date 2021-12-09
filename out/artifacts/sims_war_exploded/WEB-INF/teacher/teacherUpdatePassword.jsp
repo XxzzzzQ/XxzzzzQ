@@ -11,14 +11,14 @@
 <body class="layui-layout-body" style="background-color: #F2F2F2">
 <jsp:include page="/filterLogin.jsp"></jsp:include>
 <jsp:include page="/WEB-INF/teacher/tHeader.jsp"></jsp:include>
-<jsp:include page="/WEB-INF/teacher/teacherNav.jsp"></jsp:include>
+<jsp:include page="/WEB-INF/teacher/tleftNav.jsp"></jsp:include>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <span class="layui-breadcrumb">
-                <a href="">教师端</a>
-                <a href="">个人信息管理</a>
+                <a href="index.jsp">主页</a>
+                <a>个人信息管理</a>
                 <a><cite>修改密码</cite></a>
             </span>
             <form class="layui-form" action="${pageContext.request.contextPath}/teacherPasswordUpdateServlet" style="padding-top: 50px" method="post">
@@ -51,7 +51,7 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">修改</button>
+                        <button class="layui-btn layui-btn-primary layui-border-green" lay-submit lay-filter="formDemo">修改</button>
                         <span style="padding-left: 20px;">${update_msg}</span>
                     </div>
                 </div>

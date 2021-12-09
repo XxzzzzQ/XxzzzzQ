@@ -5,16 +5,15 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>注册页</title>
+    <title>管理系统-注册页面</title>
     <link rel="stylesheet" href="./css/layui.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <div class="frame-main">
     <div class="login-main">
-        <header class="layui-elip">学生信息管理系统</header>
+        <header class="layui-elip">注册账号</header>
 
         <!-- 表单选项 -->
         <form class="layui-form" id="registerForm" action="${pageContext.request.contextPath}/registerServlet" method="post">
@@ -43,24 +42,22 @@
 
             <div class="layui-input-inline" style="width: 56%;">
                 <label class="layadmin-user-login-icon layui-icon layui-icon-vercode"></label>
-                <input type="password" id="verifycode" name="verifycode" required lay-verify="required" placeholder="验证码" autocomplete="off"
+                <input type="password" id="verifycode" name="verifycode" required lay-verify="required" placeholder="验证码（不区分大小写）" autocomplete="off"
                        class="layui-input">
             </div>
             <a href="javascript:refreshCode()">
-                <img style="padding-left: 14px; margin-top: -15px;" src="${pageContext.request.contextPath}/checkCodeServlet" title="刷新验证码" id="vcode" draggable="false">
+                <img style="padding-left: 14px; margin-top: -15px;" src="${pageContext.request.contextPath}/checkCodeServlet" title="点击刷新验证码" id="vcode" draggable="false">
             </a>
 
 
             <div class="layui-input-inline login-btn" style="width: 100%">
-                <button type="submit" lay-submit lay-filter="sub" class="layui-btn">注册</button>
+                <button type="submit" lay-submit lay-filter="sub" class="layui-btn layui-btn-primary">注册</button>
             </div>
             <hr style="width: 100%" />
             <p style="width: 100%">
-                <a href="login.jsp" class="fl">立即登录</a>
-            <div class="tooltip">
-                <span class="tooltiptext">${msg}</span>
-            </div>
-                <a href="forget.jsp" class="fr">忘记密码？</a></p>
+                <a href="login.jsp" class="fl">已有账号？返回登录</a>
+            <div class="tooltip"></div>
+            <a href="forget.jsp" class="fr">忘记密码？</a></p>
             <i class="layui-icon" id="ri" style="color: green;font-weight: bolder; position: relative; left: 200px; top: -265px;" hidden></i>
             <i class="layui-icon" id="wr" style="color: red; font-weight: bolder; position: relative; left: 200px; top: -265px;" hidden>ဆ</i>
             <i class="layui-icon" id="pri" style="color: green;font-weight: bolder; position: relative; left: 180px; top: -213px;" hidden></i>
@@ -71,7 +68,7 @@
     </div>
     <span id="s_id"></span>
 </div>
-<footer style="position:absolute;bottom:0;width:100%;height:30px; text-align: center;">© 2018-2019.YOYLING.COM</footer>
+<footer style="position:absolute;bottom:0;width:100%;height:30px; text-align: center;">为了您可以获得更好的体验，请使用谷歌浏览器</footer>
 
 <script src="layui.js"></script>
 <script type="text/javascript">
